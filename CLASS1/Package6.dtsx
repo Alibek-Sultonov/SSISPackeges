@@ -1,0 +1,1882 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/9/2023 6:07:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-KVPUOPH"
+  DTS:CreatorName="DESKTOP-KVPUOPH\User"
+  DTS:DTSID="{00A98216-8EA8-480F-A8AE-DB51E6AA77E2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package6"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{C3A75277-6947-4B11-8CD0-3642B467CB96}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-KVPUOPH.AdventureWorksDW2019]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{565E0B82-4C2C-4913-8C14-03B8B8DF0E83}"
+      DTS:ObjectName="DESKTOP-KVPUOPH.AdventureWorksDW2019">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-KVPUOPH;Initial Catalog=AdventureWorksDW2019;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package6-{565E0B82-4C2C-4913-8C14-03B8B8DF0E83}DESKTOP-KVPUOPH.AdventureWorksDW2019;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Snowflake Connection Manager]"
+      DTS:CreationName="Snowflake (KingswaySoft)"
+      DTS:DTSID="{79946BD2-9F8D-4941-8F69-75DB605A92D6}"
+      DTS:ObjectName="Snowflake Connection Manager">
+      <DTS:ObjectData>
+        <ConnectionManager
+          ConnectionString="ProxyMode=NoProxy;ProxyUsername=;ProxyServer=;ProxyServerPort=0;AuthenticationType=Basic;Account=pizokvh-dz77824;Authenticator=snowflake;User=Alibek;Warehouse=COMPUTE_WH;Role=ACCOUNTADMIN;RetryOnIntermittentErrors=True;IgnoreCertificateErrors=False;Timeout=120"
+          ConnectByProxy="False">
+          <Password
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3ePHzWIuFUOtR+W4srH37AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACyqqhX3CU0Bn5AP0KDQ07Ed0uKLMiMUCfcobXBRp15QwAAAAAOgAAAAAIAACAAAAA0JKpIm8fjPeSP0y90ORQL4t60r1LgXD95MEHyYPoTtiAAAABYCMNp7eLCVuOZaGsKUTrGwxQavmHrLZL0cGoG4ptFOUAAAADWVm6ivDHsdTzQNP3yqnEylIVuJSS2fjr8TEP7endI52LrZBfGkhc8TqnsdAc7pBCLpoIUUYtS0VD0J873ZRjC</Password>
+        </ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3B47F6AE-BC42-420A-9963-72D769E94785}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimEmployee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-KVPUOPH.AdventureWorksDW2019]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-KVPUOPH.AdventureWorksDW2019]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeeKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmployeeKey]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeeKey]"
+                      name="EmployeeKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentEmployeeKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentEmployeeKey]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentEmployeeKey]"
+                      name="ParentEmployeeKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeeNationalIDAlternateKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmployeeNationalIDAlternateKey]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeeNationalIDAlternateKey]"
+                      name="EmployeeNationalIDAlternateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentEmployeeNationalIDAlternateKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentEmployeeNationalIDAlternateKey]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentEmployeeNationalIDAlternateKey]"
+                      name="ParentEmployeeNationalIDAlternateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesTerritoryKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryKey]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesTerritoryKey]"
+                      name="SalesTerritoryKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]"
+                      name="MiddleName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameStyle]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NameStyle]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameStyle]"
+                      name="NameStyle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HireDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HireDate]"
+                      name="HireDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BirthDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BirthDate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BirthDate]"
+                      name="BirthDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoginID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LoginID]"
+                      length="256"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoginID]"
+                      name="LoginID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmailAddress]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmailAddress]"
+                      name="EmailAddress"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      length="25"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaritalStatus]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MaritalStatus]"
+                      length="1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaritalStatus]"
+                      name="MaritalStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmergencyContactName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmergencyContactName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmergencyContactName]"
+                      name="EmergencyContactName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmergencyContactPhone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmergencyContactPhone]"
+                      length="25"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmergencyContactPhone]"
+                      name="EmergencyContactPhone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalariedFlag]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalariedFlag]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalariedFlag]"
+                      name="SalariedFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      length="1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PayFrequency]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PayFrequency]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PayFrequency]"
+                      name="PayFrequency"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BaseRate]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BaseRate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BaseRate]"
+                      name="BaseRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[VacationHours]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VacationHours]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[VacationHours]"
+                      name="VacationHours"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SickLeaveHours]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SickLeaveHours]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SickLeaveHours]"
+                      name="SickLeaveHours"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrentFlag]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrentFlag]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrentFlag]"
+                      name="CurrentFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPersonFlag]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesPersonFlag]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPersonFlag]"
+                      name="SalesPersonFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DepartmentName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DepartmentName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DepartmentName]"
+                      name="DepartmentName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[StartDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[StartDate]"
+                      name="StartDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndDate]"
+                      name="EndDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeePhoto]"
+                      dataType="image"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmployeePhoto]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeePhoto]"
+                      name="EmployeePhoto"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmployeeKey]"
+                      dataType="i4"
+                      name="EmployeeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentEmployeeKey]"
+                      dataType="i4"
+                      name="ParentEmployeeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmployeeNationalIDAlternateKey]"
+                      dataType="wstr"
+                      length="15"
+                      name="EmployeeNationalIDAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentEmployeeNationalIDAlternateKey]"
+                      dataType="wstr"
+                      length="15"
+                      name="ParentEmployeeNationalIDAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesTerritoryKey]"
+                      dataType="i4"
+                      name="SalesTerritoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      name="MiddleName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NameStyle]"
+                      dataType="bool"
+                      name="NameStyle" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="50"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[HireDate]"
+                      dataType="dbDate"
+                      name="HireDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BirthDate]"
+                      dataType="dbDate"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LoginID]"
+                      dataType="wstr"
+                      length="256"
+                      name="LoginID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="25"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MaritalStatus]"
+                      dataType="wstr"
+                      length="1"
+                      name="MaritalStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmergencyContactName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmergencyContactName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmergencyContactPhone]"
+                      dataType="wstr"
+                      length="25"
+                      name="EmergencyContactPhone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalariedFlag]"
+                      dataType="bool"
+                      name="SalariedFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PayFrequency]"
+                      dataType="ui1"
+                      name="PayFrequency" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BaseRate]"
+                      dataType="cy"
+                      name="BaseRate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VacationHours]"
+                      dataType="i2"
+                      name="VacationHours" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SickLeaveHours]"
+                      dataType="i2"
+                      name="SickLeaveHours" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrentFlag]"
+                      dataType="bool"
+                      name="CurrentFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesPersonFlag]"
+                      dataType="bool"
+                      name="SalesPersonFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DepartmentName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DepartmentName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StartDate]"
+                      dataType="dbDate"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EndDate]"
+                      dataType="dbDate"
+                      name="EndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="50"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmployeePhoto]"
+                      dataType="image"
+                      name="EmployeePhoto" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmployeeKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmployeeKey]"
+                      name="EmployeeKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentEmployeeKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentEmployeeKey]"
+                      name="ParentEmployeeKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmployeeNationalIDAlternateKey]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmployeeNationalIDAlternateKey]"
+                      name="EmployeeNationalIDAlternateKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentEmployeeNationalIDAlternateKey]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentEmployeeNationalIDAlternateKey]"
+                      name="ParentEmployeeNationalIDAlternateKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesTerritoryKey]"
+                      name="SalesTerritoryKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiddleName]"
+                      name="MiddleName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NameStyle]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NameStyle]"
+                      name="NameStyle" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HireDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[HireDate]"
+                      name="HireDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BirthDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BirthDate]"
+                      name="BirthDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LoginID]"
+                      dataType="wstr"
+                      length="256"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LoginID]"
+                      name="LoginID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
+                      name="EmailAddress" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MaritalStatus]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MaritalStatus]"
+                      name="MaritalStatus" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmergencyContactName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmergencyContactName]"
+                      name="EmergencyContactName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmergencyContactPhone]"
+                      dataType="wstr"
+                      length="25"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmergencyContactPhone]"
+                      name="EmergencyContactPhone" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalariedFlag]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalariedFlag]"
+                      name="SalariedFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PayFrequency]"
+                      dataType="ui1"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PayFrequency]"
+                      name="PayFrequency" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BaseRate]"
+                      dataType="cy"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BaseRate]"
+                      name="BaseRate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VacationHours]"
+                      dataType="i2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VacationHours]"
+                      name="VacationHours" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SickLeaveHours]"
+                      dataType="i2"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SickLeaveHours]"
+                      name="SickLeaveHours" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrentFlag]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrentFlag]"
+                      name="CurrentFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesPersonFlag]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesPersonFlag]"
+                      name="SalesPersonFlag" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DepartmentName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DepartmentName]"
+                      name="DepartmentName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StartDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StartDate]"
+                      name="StartDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EndDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EndDate]"
+                      name="EndDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmployeePhoto]"
+                      dataType="image"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmployeePhoto]"
+                      name="EmployeePhoto" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Snowflake Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2022 KingswaySoft Inc."
+              description="Insert, Update, Upsert, and Delete data over a Snowflake connection."
+              name="Snowflake Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="Database">STUDENTS</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="Schema">DBO</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="DestinationTable">SnowflakeDestination</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="Action"
+                  typeConverter="KingswaySoft.IntegrationToolkit.ProductivityPack.SnowflakeDestinationAction">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Write data to a temp table before taking other actions.  This will improve performance."
+                  expressionType="Notify"
+                  name="UseTempTable">false</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="CommandTimeout">120</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="BatchSize">100</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="Command"></property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="PreCommand"></property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="PostCommand"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how to handle duplicates in the temp table before merging. Only applies to non INSERT bulk operations."
+                  expressionType="Notify"
+                  name="DuplicateHandling"
+                  typeConverter="KingswaySoft.IntegrationToolkit.ProductivityPack.SnowflakeDestinationDuplicateHandling">1</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="FirstMatchOnly">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When enabled, will not overwrite existing values with NULL values during update/upsert operations."
+                  expressionType="Notify"
+                  name="PreventNullOverwrites">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines if bulk copy will be used to insert rows."
+                  expressionType="Notify"
+                  name="UseBulkCopy">false</property>
+                <property
+                  dataType="System.String"
+                  description="The folder path where files will be staged for the COPY TO command."
+                  expressionType="Notify"
+                  name="BulkCopyFolderPath"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Remove bulk files after upload complete."
+                  expressionType="Notify"
+                  name="RemoveBulkFilesOnCompletion">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines if progress messages should be output to the log at runtime."
+                  expressionType="Notify"
+                  name="OutputToLogAtRuntime">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If true variables were be added to the bindings list of the custom command.  If false the value will be text merged into the custom command."
+                  expressionType="Notify"
+                  name="PrepareCustomCommand">true</property>
+                <property
+                  dataType="System.String"
+                  description="The prefix for the bulk copy temp folder."
+                  expressionType="Notify"
+                  name="BulkCopyTempFolderPrefix">temp_</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.ProductivityPack.SnowflakeDestinationComponent</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Snowflake Destination.Connections[Snowflake (KingswaySoft)]"
+                  connectionManagerID="Package.ConnectionManagers[Snowflake Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Snowflake Connection Manager]"
+                  description="Snowflake Connection Manager"
+                  name="Snowflake (KingswaySoft)" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Primary Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[BaseRate]"
+                      cachedDataType="cy"
+                      cachedName="BaseRate"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[BaseRate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BaseRate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[BirthDate]"
+                      cachedDataType="dbDate"
+                      cachedName="BirthDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[BirthDate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[CurrentFlag]"
+                      cachedDataType="bool"
+                      cachedName="CurrentFlag"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[CurrentFlag]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrentFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[DepartmentName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="DepartmentName"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[DepartmentName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[DepartmentName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmailAddress]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmergencyContactName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmergencyContactName"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmergencyContactName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmergencyContactName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmergencyContactPhone]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="EmergencyContactPhone"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmergencyContactPhone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmergencyContactPhone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmployeeKey]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmployeeKey]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeeKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmployeeNationalIDAlternateKey]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="EmployeeNationalIDAlternateKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmployeeNationalIDAlternateKey]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeeNationalIDAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmployeePhoto]"
+                      cachedDataType="image"
+                      cachedName="EmployeePhoto"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmployeePhoto]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmployeePhoto]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EndDate]"
+                      cachedDataType="dbDate"
+                      cachedName="EndDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EndDate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EndDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Gender]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[HireDate]"
+                      cachedDataType="dbDate"
+                      cachedName="HireDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[HireDate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[HireDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[LastName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[LoginID]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="LoginID"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[LoginID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoginID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[MaritalStatus]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="MaritalStatus"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[MaritalStatus]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MaritalStatus]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[MiddleName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="MiddleName"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[MiddleName]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiddleName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[NameStyle]"
+                      cachedDataType="bool"
+                      cachedName="NameStyle"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[NameStyle]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[NameStyle]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[ParentEmployeeKey]"
+                      cachedDataType="i4"
+                      cachedName="ParentEmployeeKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[ParentEmployeeKey]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentEmployeeKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[ParentEmployeeNationalIDAlternateKey]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="ParentEmployeeNationalIDAlternateKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[ParentEmployeeNationalIDAlternateKey]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentEmployeeNationalIDAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[PayFrequency]"
+                      cachedDataType="ui1"
+                      cachedName="PayFrequency"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[PayFrequency]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PayFrequency]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="25"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Phone]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[SalariedFlag]"
+                      cachedDataType="bool"
+                      cachedName="SalariedFlag"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalariedFlag]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalariedFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[SalesPersonFlag]"
+                      cachedDataType="bool"
+                      cachedName="SalesPersonFlag"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalesPersonFlag]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesPersonFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[SalesTerritoryKey]"
+                      cachedDataType="i4"
+                      cachedName="SalesTerritoryKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalesTerritoryKey]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesTerritoryKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[SickLeaveHours]"
+                      cachedDataType="i2"
+                      cachedName="SickLeaveHours"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SickLeaveHours]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SickLeaveHours]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[StartDate]"
+                      cachedDataType="dbDate"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[StartDate]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[StartDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Status]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Title]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[VacationHours]"
+                      cachedDataType="i2"
+                      cachedName="VacationHours"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[VacationHours]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[VacationHours]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[BaseRate]"
+                      dataType="numeric"
+                      name="BaseRate"
+                      precision="38">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">fixed</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[BirthDate]"
+                      dataType="dbDate"
+                      name="BirthDate">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">date</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[CurrentFlag]"
+                      dataType="bool"
+                      name="CurrentFlag">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">boolean</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[DepartmentName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DepartmentName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmergencyContactName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmergencyContactName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmergencyContactPhone]"
+                      dataType="wstr"
+                      length="25"
+                      name="EmergencyContactPhone">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmployeeKey]"
+                      dataType="numeric"
+                      name="EmployeeKey"
+                      precision="38">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">fixed</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmployeeNationalIDAlternateKey]"
+                      dataType="wstr"
+                      length="15"
+                      name="EmployeeNationalIDAlternateKey">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmployeePhoto]"
+                      dataType="image"
+                      name="EmployeePhoto">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">binary</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EndDate]"
+                      dataType="dbDate"
+                      name="EndDate">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">date</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="Gender">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[HireDate]"
+                      dataType="dbDate"
+                      name="HireDate">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">date</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[LoginID]"
+                      dataType="wstr"
+                      length="256"
+                      name="LoginID">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[MaritalStatus]"
+                      dataType="wstr"
+                      length="1"
+                      name="MaritalStatus">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      name="MiddleName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[NameStyle]"
+                      dataType="bool"
+                      name="NameStyle">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">boolean</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[ParentEmployeeKey]"
+                      dataType="numeric"
+                      name="ParentEmployeeKey"
+                      precision="38">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">fixed</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[ParentEmployeeNationalIDAlternateKey]"
+                      dataType="wstr"
+                      length="15"
+                      name="ParentEmployeeNationalIDAlternateKey">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[PayFrequency]"
+                      dataType="numeric"
+                      name="PayFrequency"
+                      precision="38">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">fixed</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="25"
+                      name="Phone">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalariedFlag]"
+                      dataType="bool"
+                      name="SalariedFlag">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">boolean</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalesPersonFlag]"
+                      dataType="bool"
+                      name="SalesPersonFlag">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">boolean</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalesTerritoryKey]"
+                      dataType="numeric"
+                      name="SalesTerritoryKey"
+                      precision="38">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">fixed</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SickLeaveHours]"
+                      dataType="numeric"
+                      name="SickLeaveHours"
+                      precision="38">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">fixed</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[StartDate]"
+                      dataType="dbDate"
+                      name="StartDate">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">date</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="50"
+                      name="Status">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="50"
+                      name="Title">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[VacationHours]"
+                      dataType="numeric"
+                      name="VacationHours"
+                      precision="38">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">fixed</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Error Output"
+                  synchronousInputId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorMessage]"
+                      dataType="wstr"
+                      length="2048"
+                      lineageId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorMessage]"
+                      name="ErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Snowflake Destination.Outputs[Default Output]"
+                  exclusionGroup="1"
+                  name="Default Output"
+                  synchronousInputId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="227.499990959963,54.6000004339218" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Data Flow Task\Snowflake Destination"
+          TopLeft="369.999985297521,211.466668347253" />
+        <NodeLayout
+          Size="152,41.6"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="370.833318597741,97.0666674380833" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="446.833318597741,138.666667438083">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.9666666997801,72.8000009091696"
+              Start="0,0"
+              End="13.9666666997801,65.3000009091696">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.4000004545848" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.4000004545848"
+                    Point2="0,36.4000004545848"
+                    Point3="4,36.4000004545848" />
+                  <mssgle:LineSegment
+                    End="9.96666669978015,36.4000004545848" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.96666669978015,36.4000004545848"
+                    Point2="13.9666666997801,36.4000004545848"
+                    Point3="13.9666666997801,40.4000004545848" />
+                  <mssgle:LineSegment
+                    End="13.9666666997801,65.3000009091696" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

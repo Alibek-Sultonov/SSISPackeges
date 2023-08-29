@@ -1,0 +1,2375 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/7/2022 6:21:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-KVPUOPH"
+  DTS:CreatorName="DESKTOP-KVPUOPH\User"
+  DTS:DTSID="{C3A13A7A-94FA-49F6-A1F8-0F41CEF01D7C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{FDC40EE6-48FF-46F6-8BD2-021A9C2AE66B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{01850D9A-6209-4117-95A1-BD0E258166DF}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\User\Desktop\Snowflake\Bigdata.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeKey"
+              DTS:DTSID="{76D15C3D-B4EE-4D40-94DC-EFE76E187228}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentEmployeeKey"
+              DTS:DTSID="{F99748A4-C245-40FA-A69A-A47D6806B016}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmployeeNationalIDAlternateKey"
+              DTS:DTSID="{87A2BEA2-A141-4EEC-BB52-C85C7A3F958C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentEmployeeNationalIDAlternateKey"
+              DTS:DTSID="{ED6BB67A-2B54-4ADB-9603-E0E6E84584E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesTerritoryKey"
+              DTS:DTSID="{EBB0A654-BA1F-41EB-94D3-502E1776386B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{833BA17E-B1C5-48FB-ABB9-29931607A933}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{4423DECD-BAA5-4C61-A176-14271A466EAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MiddleName"
+              DTS:DTSID="{92CA2B9F-C4C7-4E38-819B-37EAA643216B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NameStyle"
+              DTS:DTSID="{B5481386-687B-4564-81F7-7607650FC2DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title"
+              DTS:DTSID="{30608D94-EADF-4D5D-B1C5-7D3EA66AD281}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HireDate"
+              DTS:DTSID="{B39CE519-06ED-4A6B-9E8C-D5914030ADF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BirthDate"
+              DTS:DTSID="{FC03D25C-DCC9-4AC4-8551-E39DF7491E5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LoginID"
+              DTS:DTSID="{E2267BD1-D12A-4D5E-945E-EB664D4DC5FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailAddress"
+              DTS:DTSID="{7F708440-F50C-4D72-926F-F4EBCE2F6C44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{E47263CC-ED44-4FA6-A8F2-DF25BA81C880}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MaritalStatus"
+              DTS:DTSID="{33A831BE-6828-4277-AC23-58F6951CC175}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmergencyContactName"
+              DTS:DTSID="{36776BAD-C44F-4F52-8DF0-D623D649F0E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmergencyContactPhone"
+              DTS:DTSID="{F342A082-46A7-488C-9E75-15A9F5BF56F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalariedFlag"
+              DTS:DTSID="{2B7BE222-00A0-461C-9D59-413FD18BCAA8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{D68D50D3-B0FF-4384-AE1A-050B2549B658}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PayFrequency"
+              DTS:DTSID="{7E29F672-F588-4A4A-B1D2-7A88C926B79C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BaseRate"
+              DTS:DTSID="{C56253FE-92CE-412D-A4FC-0F3306362505}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VacationHours"
+              DTS:DTSID="{E3EC7516-9202-431C-9DEE-339E9F1BAA59}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SickLeaveHours"
+              DTS:DTSID="{034DDF7D-5812-4579-A23E-DBE1BCDE8C74}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrentFlag"
+              DTS:DTSID="{151821EC-FD92-47E6-A7C5-197871F012CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesPersonFlag"
+              DTS:DTSID="{0409BEF2-07BC-42A0-A42D-8305E4AE754D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DepartmentName"
+              DTS:DTSID="{F393D45B-8D42-4BFE-A2F1-DA095677487D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StartDate"
+              DTS:DTSID="{A98A8CF7-1440-4458-8F8E-F1F154ACC94B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EndDate"
+              DTS:DTSID="{4439049F-D9A7-4307-B5FA-051FCB055D18}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Status"
+              DTS:DTSID="{EB8A0AF7-408B-4DD4-8789-7EF708744D11}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Snowflake Connection Manager]"
+      DTS:CreationName="Snowflake (KingswaySoft)"
+      DTS:DTSID="{4A5880CF-4656-4B18-A718-AE547F673008}"
+      DTS:ObjectName="Snowflake Connection Manager">
+      <DTS:ObjectData>
+        <ConnectionManager
+          ConnectionString="ProxyMode=NoProxy;ProxyUsername=;ProxyServer=;ProxyServerPort=0;AuthenticationType=Basic;Account=qx74212.uae-north.azure;Authenticator=snowflake;User=ALIBEK;Warehouse=COMPUTE_WH;Role=;RetryOnIntermittentErrors=True;IgnoreCertificateErrors=False;Timeout=120"
+          ConnectByProxy="False">
+          <Password
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAy0pP1W43lkmXmqByDNlpCwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADjM86FUSPlENmku6BIiSSbRFE2OTCoHXTjTMpfWBueTQAAAAAOgAAAAAIAACAAAACshjUcXrPfz4ayLfT81twwj5E2G/jqTTpImXZRyU0OeCAAAAAHKJZhMTMRl0kl+K9eyJ/910Q8iR9oLol8pakEW+T+dkAAAADmXLHTmZFRE4AS8dslALTnTu0SFY/P5SzYuCV+6gOqVAMtj/jtguJcipQ00EaG1D6RtTGom39bJ7Dx2MqTR2z3</Password>
+        </ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3F6498D1-DCB6-4921-8A9C-53EBE466F63F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeKey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmployeeKey]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeKey]"
+                      name="EmployeeKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ParentEmployeeKey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ParentEmployeeKey]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ParentEmployeeKey]"
+                      name="ParentEmployeeKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeNationalIDAlternateKey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmployeeNationalIDAlternateKey]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeNationalIDAlternateKey]"
+                      name="EmployeeNationalIDAlternateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ParentEmployeeNationalIDAlternateKey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ParentEmployeeNationalIDAlternateKey]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ParentEmployeeNationalIDAlternateKey]"
+                      name="ParentEmployeeNationalIDAlternateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SalesTerritoryKey]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesTerritoryKey]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SalesTerritoryKey]"
+                      name="SalesTerritoryKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[LastName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[MiddleName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MiddleName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[MiddleName]"
+                      name="MiddleName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[NameStyle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NameStyle]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[NameStyle]"
+                      name="NameStyle"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Title]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[HireDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HireDate]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[HireDate]"
+                      name="HireDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BirthDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BirthDate]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BirthDate]"
+                      name="BirthDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[LoginID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LoginID]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[LoginID]"
+                      name="LoginID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmailAddress]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmailAddress]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmailAddress]"
+                      name="EmailAddress"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Phone]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[MaritalStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MaritalStatus]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[MaritalStatus]"
+                      name="MaritalStatus"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmergencyContactName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmergencyContactName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmergencyContactName]"
+                      name="EmergencyContactName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmergencyContactPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmergencyContactPhone]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmergencyContactPhone]"
+                      name="EmergencyContactPhone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SalariedFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalariedFlag]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SalariedFlag]"
+                      name="SalariedFlag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PayFrequency]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PayFrequency]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PayFrequency]"
+                      name="PayFrequency"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BaseRate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BaseRate]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BaseRate]"
+                      name="BaseRate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[VacationHours]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[VacationHours]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[VacationHours]"
+                      name="VacationHours"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SickLeaveHours]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SickLeaveHours]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SickLeaveHours]"
+                      name="SickLeaveHours"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CurrentFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CurrentFlag]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CurrentFlag]"
+                      name="CurrentFlag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPersonFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesPersonFlag]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPersonFlag]"
+                      name="SalesPersonFlag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[DepartmentName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DepartmentName]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[DepartmentName]"
+                      name="DepartmentName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[StartDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StartDate]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[StartDate]"
+                      name="StartDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EndDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EndDate]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EndDate]"
+                      name="EndDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Status]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmployeeKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmployeeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ParentEmployeeKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ParentEmployeeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmployeeNationalIDAlternateKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmployeeNationalIDAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ParentEmployeeNationalIDAlternateKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ParentEmployeeNationalIDAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesTerritoryKey]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SalesTerritoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FirstName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MiddleName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MiddleName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[NameStyle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NameStyle" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[HireDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HireDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BirthDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LoginID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LoginID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmailAddress]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[MaritalStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MaritalStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmergencyContactName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmergencyContactName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EmergencyContactPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EmergencyContactPhone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalariedFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SalariedFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PayFrequency]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PayFrequency" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[BaseRate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BaseRate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[VacationHours]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VacationHours" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SickLeaveHours]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SickLeaveHours" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CurrentFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CurrentFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[SalesPersonFlag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SalesPersonFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DepartmentName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DepartmentName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[StartDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[EndDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Snowflake Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="KingswaySoft Inc.; http://www.kingswaysoft.com; support@kingswaysoft.com; Copyright (c) 2022 KingswaySoft Inc."
+              description="Insert, Update, Upsert, and Delete data over a Snowflake connection."
+              name="Snowflake Destination"
+              usesDispositions="true">
+              <properties>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="Database">TESTDB</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="Schema">MYSCHEMA</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="DestinationTable">SnowflakeDestination</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="Action"
+                  typeConverter="KingswaySoft.IntegrationToolkit.ProductivityPack.SnowflakeDestinationAction">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Write data to a temp table before taking other actions.  This will improve performance."
+                  expressionType="Notify"
+                  name="UseTempTable">false</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="CommandTimeout">120</property>
+                <property
+                  dataType="System.Int32"
+                  expressionType="Notify"
+                  name="BatchSize">100</property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="Command"></property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="PreCommand"></property>
+                <property
+                  dataType="System.String"
+                  expressionType="Notify"
+                  name="PostCommand"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how to handle duplicates in the temp table before merging. Only applies to non INSERT bulk operations."
+                  expressionType="Notify"
+                  name="DuplicateHandling"
+                  typeConverter="KingswaySoft.IntegrationToolkit.ProductivityPack.SnowflakeDestinationDuplicateHandling">1</property>
+                <property
+                  dataType="System.Boolean"
+                  expressionType="Notify"
+                  name="FirstMatchOnly">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="When enabled, will not overwrite existing values with NULL values during update/upsert operations."
+                  expressionType="Notify"
+                  name="PreventNullOverwrites">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines if bulk copy will be used to insert rows."
+                  expressionType="Notify"
+                  name="UseBulkCopy">false</property>
+                <property
+                  dataType="System.String"
+                  description="The folder path where files will be staged for the COPY TO command."
+                  expressionType="Notify"
+                  name="BulkCopyFolderPath"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Remove bulk files after upload complete."
+                  expressionType="Notify"
+                  name="RemoveBulkFilesOnCompletion">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines if progress messages should be output to the log at runtime."
+                  expressionType="Notify"
+                  name="OutputToLogAtRuntime">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If true variables were be added to the bindings list of the custom command.  If false the value will be text merged into the custom command."
+                  expressionType="Notify"
+                  name="PrepareCustomCommand">true</property>
+                <property
+                  dataType="System.String"
+                  description="The prefix for the bulk copy temp folder."
+                  expressionType="Notify"
+                  name="BulkCopyTempFolderPrefix">temp_</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">KingswaySoft.IntegrationToolkit.ProductivityPack.SnowflakeDestinationComponent</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Snowflake Destination.Connections[Snowflake (KingswaySoft)]"
+                  connectionManagerID="Package.ConnectionManagers[Snowflake Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Snowflake Connection Manager]"
+                  description="Snowflake Connection Manager"
+                  name="Snowflake (KingswaySoft)" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Primary Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[BaseRate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BaseRate"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[BaseRate]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BaseRate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[BirthDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BirthDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[BirthDate]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[CurrentFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CurrentFlag"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[CurrentFlag]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CurrentFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[DepartmentName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DepartmentName"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[DepartmentName]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[DepartmentName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmailAddress]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmailAddress]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmergencyContactName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmergencyContactName"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmergencyContactName]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmergencyContactName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmergencyContactPhone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmergencyContactPhone"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmergencyContactPhone]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmergencyContactPhone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmployeeKey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmployeeKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmployeeKey]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EmployeeNationalIDAlternateKey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EmployeeNationalIDAlternateKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmployeeNationalIDAlternateKey]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EmployeeNationalIDAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[EndDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EndDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EndDate]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[EndDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[FirstName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Gender]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[HireDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HireDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[HireDate]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[HireDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[LastName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[LastName]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[LoginID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LoginID"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[LoginID]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[LoginID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[MaritalStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MaritalStatus"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[MaritalStatus]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[MaritalStatus]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[MiddleName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MiddleName"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[MiddleName]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[MiddleName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[NameStyle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NameStyle"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[NameStyle]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[NameStyle]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[ParentEmployeeKey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ParentEmployeeKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[ParentEmployeeKey]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ParentEmployeeKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[ParentEmployeeNationalIDAlternateKey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ParentEmployeeNationalIDAlternateKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[ParentEmployeeNationalIDAlternateKey]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ParentEmployeeNationalIDAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[PayFrequency]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PayFrequency"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[PayFrequency]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[PayFrequency]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[Phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Phone]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Phone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[SalariedFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SalariedFlag"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalariedFlag]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SalariedFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[SalesPersonFlag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SalesPersonFlag"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalesPersonFlag]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SalesPersonFlag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[SalesTerritoryKey]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SalesTerritoryKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalesTerritoryKey]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SalesTerritoryKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[SickLeaveHours]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SickLeaveHours"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SickLeaveHours]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[SickLeaveHours]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[StartDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[StartDate]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[StartDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[Status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Status]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[Title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Title]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].Columns[VacationHours]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VacationHours"
+                      externalMetadataColumnId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[VacationHours]"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[VacationHours]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[BaseRate]"
+                      dataType="wstr"
+                      length="50"
+                      name="BaseRate">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[BirthDate]"
+                      dataType="wstr"
+                      length="50"
+                      name="BirthDate">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[CurrentFlag]"
+                      dataType="wstr"
+                      length="50"
+                      name="CurrentFlag">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[DepartmentName]"
+                      dataType="wstr"
+                      length="50"
+                      name="DepartmentName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmergencyContactName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmergencyContactName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmergencyContactPhone]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmergencyContactPhone">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmployeeKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmployeeKey">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EmployeeNationalIDAlternateKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmployeeNationalIDAlternateKey">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[EndDate]"
+                      dataType="wstr"
+                      length="50"
+                      name="EndDate">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="50"
+                      name="Gender">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[HireDate]"
+                      dataType="wstr"
+                      length="50"
+                      name="HireDate">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[LoginID]"
+                      dataType="wstr"
+                      length="50"
+                      name="LoginID">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[MaritalStatus]"
+                      dataType="wstr"
+                      length="50"
+                      name="MaritalStatus">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      name="MiddleName">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[NameStyle]"
+                      dataType="wstr"
+                      length="50"
+                      name="NameStyle">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[ParentEmployeeKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="ParentEmployeeKey">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[ParentEmployeeNationalIDAlternateKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="ParentEmployeeNationalIDAlternateKey">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[PayFrequency]"
+                      dataType="wstr"
+                      length="50"
+                      name="PayFrequency">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="50"
+                      name="Phone">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalariedFlag]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalariedFlag">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalesPersonFlag]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesPersonFlag">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SalesTerritoryKey]"
+                      dataType="wstr"
+                      length="50"
+                      name="SalesTerritoryKey">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[SickLeaveHours]"
+                      dataType="wstr"
+                      length="50"
+                      name="SickLeaveHours">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[StartDate]"
+                      dataType="wstr"
+                      length="50"
+                      name="StartDate">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="50"
+                      name="Status">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="50"
+                      name="Title">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input].ExternalColumns[VacationHours]"
+                      dataType="wstr"
+                      length="50"
+                      name="VacationHours">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsConditionalField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="IsVariantField"
+                          name="IsVariantField">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          name="CanBeConditionalField">true</property>
+                        <property
+                          dataType="System.String"
+                          description="SnowflakeType"
+                          name="SnowflakeType">text</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Error Output"
+                  synchronousInputId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorMessage]"
+                      dataType="wstr"
+                      length="2048"
+                      lineageId="Package\Data Flow Task\Snowflake Destination.Outputs[Error Output].Columns[ErrorMessage]"
+                      name="ErrorMessage" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Snowflake Destination.Outputs[Default Output]"
+                  exclusionGroup="1"
+                  name="Default Output"
+                  synchronousInputId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task\Snowflake Destination.Inputs[Primary Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="161.666660242611,39.8666669834985" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Data Flow Task\Snowflake Destination"
+          TopLeft="299.987179156043,160.310256424032" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Data Flow Task\Flat File Source"
+          TopLeft="317,60" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="391.693589578021,101.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.7102564240316"
+              Start="0,0"
+              End="0,51.2102564240316">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.2102564240316" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

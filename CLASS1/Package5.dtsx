@@ -1,0 +1,765 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/2/2023 7:44:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-KVPUOPH"
+  DTS:CreatorName="DESKTOP-KVPUOPH\User"
+  DTS:DTSID="{E03A93E6-7D62-41FA-ACB8-12811CEEAC1C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package5"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{34ADA57A-BA9D-45A2-8935-9609126E971F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[C:\Users\User\Downloads\Telegram Desktop\«BPO»  (Ответы) 2023.xlsx]"
+      DTS:CreationName="ADO.NET:OLEDB"
+      DTS:DTSID="{2E587856-E4CE-4643-AA12-D2482D46DBD6}"
+      DTS:ObjectName="C:\Users\User\Downloads\Telegram Desktop\«BPO»  (Ответы) 2023.xlsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=C:\Users\User\Downloads\Telegram Desktop\«BPO»  (Ответы) 2023.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=&quot;Excel 12.0;HDR=YES;&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{CEAB241C-3D7B-48F1-BD67-007CE2C8FF14}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ExcelFilePath">@[User::SheetNames]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Talend]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{36EAC47A-9F05-4D01-961C-E56744E7983D}"
+      DTS:ObjectName="LocalHost.Talend">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Talend;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package5-{36EAC47A-9F05-4D01-961C-E56744E7983D}LocalHost.Talend;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{63A98B93-6C6E-4B5A-BC16-3EAD7E2EF488}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SheetNames">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{FB5E8A4A-00A2-4C9A-8403-CBFB76CC7E34}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachSchemaRowsetEnumerator"
+        DTS:DTSID="{255175D1-B65B-4493-96BA-15DE4EEB9899}"
+        DTS:ObjectName="{255175D1-B65B-4493-96BA-15DE4EEB9899}">
+        <DTS:ObjectData>
+          <FEESchemaRowset
+            Connection="C:\Users\User\Downloads\Telegram Desktop\«BPO»  (Ответы) 2023.xlsx"
+            Schema="c8b52229-5cf3-11ce-ade5-00aa0044773d" />
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C9EEF632-F9CD-476B-BDFD-5D15009DE3C8}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">КДУ$</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable">User::SheetNames</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">1</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Отметка времени]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Отметка времени]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Отметка времени]"
+                          name="Отметка времени"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Ф#И#Ш/ Full name ]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ф#И#Ш/ Full name ]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Ф#И#Ш/ Full name ]"
+                          name="Ф#И#Ш/ Full name "
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Телефон / Phone]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Телефон / Phone]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Телефон / Phone]"
+                          name="Телефон / Phone"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Электрон манзил / Gmail]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Электрон манзил / Gmail]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Электрон манзил / Gmail]"
+                          name="Электрон манзил / Gmail"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you ]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you ]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you ]"
+                          name="Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you "
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Сизнинг ёшингиз? / Age?]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Сизнинг ёшингиз? / Age?]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Сизнинг ёшингиз? / Age?]"
+                          name="Сизнинг ёшингиз? / Age?"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Инглиз тили даражангиз? / Level of English?]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Инглиз тили даражангиз? / Level of English?]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Инглиз тили даражангиз? / Level of English?]"
+                          name="Инглиз тили даражангиз? / Level of English?"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Доимий яшаш манзилингиз? / Address?]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Доимий яшаш манзилингиз? / Address?]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Доимий яшаш манзилингиз? / Address?]"
+                          name="Доимий яшаш манзилингиз? / Address?"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм ]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм ]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм ]"
+                          name="Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм "
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Қайси ҳудудда тест топширмоқчисиз?/Test center?]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Қайси ҳудудда тест топширмоқчисиз?/Test center?]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Қайси ҳудудда тест топширмоқчисиз?/Test center?]"
+                          name="Қайси ҳудудда тест топширмоқчисиз?/Test center?"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Тест топшириш худудингиз/Test center]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Тест топшириш худудингиз/Test center]"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Тест топшириш худудингиз/Test center]"
+                          name="Тест топшириш худудингиз/Test center"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Отметка времени]"
+                          dataType="date"
+                          name="Отметка времени" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ф#И#Ш/ Full name ]"
+                          dataType="wstr"
+                          length="255"
+                          name="Ф#И#Ш/ Full name " />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Телефон / Phone]"
+                          dataType="wstr"
+                          length="255"
+                          name="Телефон / Phone" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Электрон манзил / Gmail]"
+                          dataType="wstr"
+                          length="255"
+                          name="Электрон манзил / Gmail" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you ]"
+                          dataType="wstr"
+                          length="255"
+                          name="Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you " />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Сизнинг ёшингиз? / Age?]"
+                          dataType="r8"
+                          name="Сизнинг ёшингиз? / Age?" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Инглиз тили даражангиз? / Level of English?]"
+                          dataType="wstr"
+                          length="255"
+                          name="Инглиз тили даражангиз? / Level of English?" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Доимий яшаш манзилингиз? / Address?]"
+                          dataType="wstr"
+                          length="255"
+                          name="Доимий яшаш манзилингиз? / Address?" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм ]"
+                          dataType="wstr"
+                          length="255"
+                          name="Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм " />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Қайси ҳудудда тест топширмоқчисиз?/Test center?]"
+                          dataType="wstr"
+                          length="255"
+                          name="Қайси ҳудудда тест топширмоқчисиз?/Test center?" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Тест топшириш худудингиз/Test center]"
+                          dataType="wstr"
+                          length="255"
+                          name="Тест топшириш худудингиз/Test center" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Отметка времени]"
+                          dataType="date"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Отметка времени]"
+                          name="Отметка времени" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Ф#И#Ш/ Full name ]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Ф#И#Ш/ Full name ]"
+                          name="Ф#И#Ш/ Full name " />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Телефон / Phone]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Телефон / Phone]"
+                          name="Телефон / Phone" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Электрон манзил / Gmail]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Электрон манзил / Gmail]"
+                          name="Электрон манзил / Gmail" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you ]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you ]"
+                          name="Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you " />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Сизнинг ёшингиз? / Age?]"
+                          dataType="r8"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Сизнинг ёшингиз? / Age?]"
+                          name="Сизнинг ёшингиз? / Age?" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Инглиз тили даражангиз? / Level of English?]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Инглиз тили даражангиз? / Level of English?]"
+                          name="Инглиз тили даражангиз? / Level of English?" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Доимий яшаш манзилингиз? / Address?]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Доимий яшаш манзилингиз? / Address?]"
+                          name="Доимий яшаш манзилингиз? / Address?" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм ]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм ]"
+                          name="Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм " />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Қайси ҳудудда тест топширмоқчисиз?/Test center?]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Қайси ҳудудда тест топширмоқчисиз?/Test center?]"
+                          name="Қайси ҳудудда тест топширмоқчисиз?/Test center?" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Тест топшириш худудингиз/Test center]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Тест топшириш худудингиз/Test center]"
+                          name="Тест топшириш худудингиз/Test center" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Guys]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Talend]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Talend]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Отметка времени]"
+                          cachedDataType="date"
+                          cachedName="Отметка времени"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Отметка времени]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Отметка времени]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ф#И#Ш/ Full name ]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Ф#И#Ш/ Full name "
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ф#И#Ш/ Full name ]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Ф#И#Ш/ Full name ]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Телефон / Phone]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Телефон / Phone"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Телефон / Phone]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Телефон / Phone]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Электрон манзил / Gmail]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Электрон манзил / Gmail"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Электрон манзил / Gmail]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Электрон манзил / Gmail]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you ]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you "
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you ]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you ]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Сизнинг ёшингиз? / Age?]"
+                          cachedDataType="r8"
+                          cachedName="Сизнинг ёшингиз? / Age?"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Сизнинг ёшингиз? / Age?]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Сизнинг ёшингиз? / Age?]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Инглиз тили даражангиз? / Level of English?]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Инглиз тили даражангиз? / Level of English?"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Инглиз тили даражангиз? / Level of English?]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Инглиз тили даражангиз? / Level of English?]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Доимий яшаш манзилингиз? / Address?]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Доимий яшаш манзилингиз? / Address?"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Доимий яшаш манзилингиз? / Address?]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Доимий яшаш манзилингиз? / Address?]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм ]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм "
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм ]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм ]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Қайси ҳудудда тест топширмоқчисиз?/Test center?]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Қайси ҳудудда тест топширмоқчисиз?/Test center?"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Қайси ҳудудда тест топширмоқчисиз?/Test center?]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Қайси ҳудудда тест топширмоқчисиз?/Test center?]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Тест топшириш худудингиз/Test center]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Тест топшириш худудингиз/Test center"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Тест топшириш худудингиз/Test center]"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Тест топшириш худудингиз/Test center]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Отметка времени]"
+                          dataType="dbTimeStamp"
+                          name="Отметка времени" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ф#И#Ш/ Full name ]"
+                          dataType="wstr"
+                          length="255"
+                          name="Ф#И#Ш/ Full name " />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Телефон / Phone]"
+                          dataType="wstr"
+                          length="255"
+                          name="Телефон / Phone" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Электрон манзил / Gmail]"
+                          dataType="wstr"
+                          length="255"
+                          name="Электрон манзил / Gmail" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you ]"
+                          dataType="wstr"
+                          length="255"
+                          name="Сиз қайси Олий ўқув юрти талабасисиз? / Which university do you " />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Сизнинг ёшингиз? / Age?]"
+                          dataType="r8"
+                          name="Сизнинг ёшингиз? / Age?" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Инглиз тили даражангиз? / Level of English?]"
+                          dataType="wstr"
+                          length="255"
+                          name="Инглиз тили даражангиз? / Level of English?" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Доимий яшаш манзилингиз? / Address?]"
+                          dataType="wstr"
+                          length="255"
+                          name="Доимий яшаш манзилингиз? / Address?" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм ]"
+                          dataType="wstr"
+                          length="255"
+                          name="Барча янгиликлардан хабардор бўлиб туруш учун бизнинг телеграмм " />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Қайси ҳудудда тест топширмоқчисиз?/Test center?]"
+                          dataType="wstr"
+                          length="255"
+                          name="Қайси ҳудудда тест топширмоқчисиз?/Test center?" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Тест топшириш худудингиз/Test center]"
+                          dataType="wstr"
+                          length="255"
+                          name="Тест топшириш худудингиз/Test center" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Data Flow Task.Paths[Excel Source Output]"
+                  endId="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Excel Source Output"
+                  startId="Package\Foreach Loop Container\Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{E141C09A-2015-40FD-A3BA-56F86343CDA2}"
+          DTS:ObjectName="{E141C09A-2015-40FD-A3BA-56F86343CDA2}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::SheetNames" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task"
+          TopLeft="27.2999840060879,23.2666682439381" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="204.8,120"
+          Size="204.8,163.2"
+          Id="Package\Foreach Loop Container"
+          TopLeft="374.999985098839,131.733334380256" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
+          TopLeft="356.666652494007,255.666668698523" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\Excel Source"
+          TopLeft="356.666652494007,151.666667872005" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="426.666652494007,193.266667872005">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="15.6000000000001,62.4000008265178"
+              Start="0,0"
+              End="15.6000000000001,54.9000008265178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.2000004132589" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.2000004132589"
+                    Point2="0,31.2000004132589"
+                    Point3="4,31.2000004132589" />
+                  <mssgle:LineSegment
+                    End="11.6000000000001,31.2000004132589" />
+                  <mssgle:CubicBezierSegment
+                    Point1="11.6000000000001,31.2000004132589"
+                    Point2="15.6000000000001,31.2000004132589"
+                    Point3="15.6000000000001,35.2000004132589" />
+                  <mssgle:LineSegment
+                    End="15.6000000000001,54.9000008265178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
